@@ -21,7 +21,7 @@ angular.module('myYoApp')
                      cartItem.number += 1;
                  }
                  else{
-                     cartItems.push(new  CartItem(addToCartService.getCartItems(item.barcode, $scope.items),1));
+                     cartItems.push({item: item, number: 1});
                  }
 
                 Util.localStorage.setStorageItem('cartItems', cartItems);
