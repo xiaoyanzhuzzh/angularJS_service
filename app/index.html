@@ -77,9 +77,6 @@
                 <!-- build:js(.) scripts/vendor.js -->
                 <!-- bower:js -->
                 <script src="bower_components/jquery/dist/jquery.js"></script>
-                <script src="scripts/controllers/lib/lodash-2.4.1/lodash.js"></script>
-                <script src="scripts/controllers/lib/lodash-2.4.1/lodash.compat.js"></script>
-
                 <script src="bower_components/es5-shim/es5-shim.js"></script>
                 <script src="bower_components/angular/angular.js"></script>
                 <script src="bower_components/json3/lib/json3.js"></script>
@@ -94,11 +91,13 @@
                 <!-- endbuild -->
 
                 <!-- build:js({.tmp,app}) scripts/scripts.js -->
+                <script src="scripts/controllers/lib/lodash-2.4.1/lodash.js"></script>
                 <script src="scripts/app.js"></script>
                 <script src="scripts/Utils/utils.js"></script>
                 <script src="scripts/controllers/main.js"></script>
                 <script src="scripts/model/cartItem.js"></script>
                 <script src="scripts/service/items.js"></script>
+                <script src="scripts/service/addToCart.js"></script>
                 <script src="scripts/service/cartItemOperate.js"></script>
 
                 <script src="scripts/controllers/cartCount.js"></script>

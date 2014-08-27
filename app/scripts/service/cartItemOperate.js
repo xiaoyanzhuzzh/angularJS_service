@@ -1,5 +1,5 @@
 angular.module('myYoApp')
-  .service('CartItemOperateService', function(){
+  .service('cartItemOperateService', function(){
 
     this.getTotalNumber = function(array){
         var totalNumber = 0;

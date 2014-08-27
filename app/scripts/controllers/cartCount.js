@@ -8,14 +8,12 @@ angular.module('myYoApp')
 
         $scope.addCartCount = function(){
 
-            if(!Util.localStorage.getStorageItem('cartCount')){
+            if(!$scope.cartCount){
 
-                Util.localStorage.setStorageItem('cartCount', 0);
+                $scope.cartCount = 0;
             }
 
-            $scope.cartCount = Util.localStorage.getStorageItem('cartCount') + 1;
-            Util.localStorage.setStorageItem('cartCount', $scope.cartCount);
-
+            Util.localStorage.setStorageItem('cartCount', ++$scope.cartCount);
         };
 
     });
