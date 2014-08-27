@@ -8,37 +8,10 @@
  * Controller of the myYoApp
  */
 angular.module('myYoApp')
-  .controller('CartPayListCtrl', function ($scope) {
+  .controller('CartPayListCtrl', function ($scope, CartItemOperateService) {
 
-    $scope.cartPayList = Util.localStorage.setStorageItem('cartItems');
+     $scope.cartPayList = Util.localStorage.getStorageItem('cartItems');
+     $scope.total = CartItemOperateService.getTotalMoney($scope.cartPayList );
+     $scope.totalNumber = CartItemOperateService.getTotalNumber($scope.cartPayList );
 
-    $scope.total = getTotal($scope.cartPayList);
-
-    $scope.totalNumber = getTotalNumber($scope.cartPayList);
   });
-
-
-  function getTotal(array){
-
-    var total = 0;
-    if(!array){
-      array = [];
-    }
-    for(var i = 0; i < array.length; i++){
-        total += array[i].number * array[i].item.price;
-    }
-    return total;
-  }
-
-  function getTotalNumber(array){
-
-    var totalNumber = 0;
-    var total = 0;
-    if(!array){
-      array = [];
-    }
-    for(var i = 0; i < array.length; i++){
-        totalNumber += array[i].number;
-    }
-    return totalNumber;
-  }
